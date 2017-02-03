@@ -1,8 +1,8 @@
 SQL_EXPORT="
-select annotation_category, count(annotation_category)
+select annotation_category, count(distinct annotation_id) as cnt
 from nxflat.entry_mapped_statements
 group by annotation_category
-order by 2 desc
+order by cnt desc
 "
 if [ -z "$1" ]
 then 

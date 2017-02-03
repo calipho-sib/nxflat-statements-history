@@ -7,5 +7,5 @@ if [ -z "$1" ]
 then 
 	psql -d nxflat -c "COPY ($SQL_EXPORT) TO STDOUT WITH CSV HEADER"
 else	
-	psql -h $1 -d nxflat -c "COPY ($SQL_EXPORT) TO STDOUT WITH CSV HEADER"
+	psql -U postgres -h $1 -d nxflat -c "COPY ($SQL_EXPORT) TO STDOUT WITH CSV HEADER"
 fi
