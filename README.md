@@ -10,3 +10,7 @@ sh nxs-export-statements.sh kant > $RELEASE-BED.csv
 sh nxs-export-statements.sh kant > bed.csv
 ```
 
+Pour conter le nombre de kinases:
+```shell
+egrep -o 'KKPA-BP\w{6}' *@strauss.json | sort --unique > $RELEASE-annot-kinases.txt
+```
